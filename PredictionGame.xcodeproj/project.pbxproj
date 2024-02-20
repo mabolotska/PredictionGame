@@ -13,6 +13,11 @@
 		D0BD5B8B2B836C7B00DAA4E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0BD5B892B836C7B00DAA4E5 /* Main.storyboard */; };
 		D0BD5B8D2B836C7E00DAA4E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0BD5B8C2B836C7E00DAA4E5 /* Assets.xcassets */; };
 		D0BD5B902B836C7E00DAA4E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0BD5B8E2B836C7E00DAA4E5 /* LaunchScreen.storyboard */; };
+		D0BD5BC42B84B1E800DAA4E5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D0BD5BC32B84B1E800DAA4E5 /* SnapKit */; };
+		D0BD5BC62B84B1E800DAA4E5 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = D0BD5BC52B84B1E800DAA4E5 /* SnapKit-Dynamic */; };
+		D0BD5BC82B84BFB800DAA4E5 /* MemeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BD5BC72B84BFB800DAA4E5 /* MemeVC.swift */; };
+		D0BD5BCA2B84CD1800DAA4E5 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BD5BC92B84CD1800DAA4E5 /* Meme.swift */; };
+		D0BD5BCC2B84D1D700DAA4E5 /* MemeControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BD5BCB2B84D1D700DAA4E5 /* MemeControllerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,9 @@
 		D0BD5B8C2B836C7E00DAA4E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0BD5B8F2B836C7E00DAA4E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0BD5B912B836C7E00DAA4E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0BD5BC72B84BFB800DAA4E5 /* MemeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeVC.swift; sourceTree = "<group>"; };
+		D0BD5BC92B84CD1800DAA4E5 /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
+		D0BD5BCB2B84D1D700DAA4E5 /* MemeControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeControllerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +39,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0BD5BC42B84B1E800DAA4E5 /* SnapKit in Frameworks */,
+				D0BD5BC62B84B1E800DAA4E5 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +70,7 @@
 				D0BD5B832B836C7B00DAA4E5 /* AppDelegate.swift */,
 				D0BD5B852B836C7B00DAA4E5 /* SceneDelegate.swift */,
 				D0BD5B872B836C7B00DAA4E5 /* QuestionVC.swift */,
+				D0BD5BC72B84BFB800DAA4E5 /* MemeVC.swift */,
 				D0BD5B892B836C7B00DAA4E5 /* Main.storyboard */,
 				D0BD5B8C2B836C7E00DAA4E5 /* Assets.xcassets */,
 				D0BD5B8E2B836C7E00DAA4E5 /* LaunchScreen.storyboard */,
@@ -71,6 +82,8 @@
 		D0BD5B972B836D1D00DAA4E5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D0BD5BCB2B84D1D700DAA4E5 /* MemeControllerViewModel.swift */,
+				D0BD5BC92B84CD1800DAA4E5 /* Meme.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -91,6 +104,10 @@
 			dependencies = (
 			);
 			name = PredictionGame;
+			packageProductDependencies = (
+				D0BD5BC32B84B1E800DAA4E5 /* SnapKit */,
+				D0BD5BC52B84B1E800DAA4E5 /* SnapKit-Dynamic */,
+			);
 			productName = PredictionGame;
 			productReference = D0BD5B802B836C7B00DAA4E5 /* PredictionGame.app */;
 			productType = "com.apple.product-type.application";
@@ -119,6 +136,9 @@
 				Base,
 			);
 			mainGroup = D0BD5B772B836C7B00DAA4E5;
+			packageReferences = (
+				D0BD5BC22B84B1E800DAA4E5 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = D0BD5B812B836C7B00DAA4E5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -146,9 +166,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0BD5BC82B84BFB800DAA4E5 /* MemeVC.swift in Sources */,
 				D0BD5B882B836C7B00DAA4E5 /* QuestionVC.swift in Sources */,
+				D0BD5BCC2B84D1D700DAA4E5 /* MemeControllerViewModel.swift in Sources */,
 				D0BD5B842B836C7B00DAA4E5 /* AppDelegate.swift in Sources */,
 				D0BD5B862B836C7B00DAA4E5 /* SceneDelegate.swift in Sources */,
+				D0BD5BCA2B84CD1800DAA4E5 /* Meme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +394,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D0BD5BC22B84B1E800DAA4E5 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mabolotska/SnapKit";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D0BD5BC32B84B1E800DAA4E5 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0BD5BC22B84B1E800DAA4E5 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		D0BD5BC52B84B1E800DAA4E5 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0BD5BC22B84B1E800DAA4E5 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D0BD5B782B836C7B00DAA4E5 /* Project object */;
 }
