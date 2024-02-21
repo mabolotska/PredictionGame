@@ -8,15 +8,13 @@
 import Foundation
 
 //struct Meme {
-//    struct ArrayElement: Codable {
-//        let success: Bool?
-//        let data: DataClass?
-//    }
-//
-//    // MARK: - DataClass
-//    struct DataClass: Codable {
-//        let memes: [Meme]?
-//    }
+    struct ArrayElement: Codable {
+        let success: Bool?
+        let data: DataClass?
+    }
+
+    // MARK: - DataClass
+   
 //
 //    // MARK: - Meme
 //    struct Meme: Codable {
@@ -35,25 +33,47 @@ import Foundation
 //}
 
 
+//import Foundation
+//struct DataClass: Codable {
+//    let memes: [Meme]
+//}
+//
+//    // MARK: - Meme
+//    struct Meme: Codable {
+//
+//        let url: String
+//        
+////        var imageUrl: URL? {
+////                return URL(string: url)
+////            }
+//        
+//    }
+//
+//
+
+
 import Foundation
 
+struct MemesResponse: Codable {
+    let success: Bool
+    let data: DataClass
+}
 
-    // MARK: - Meme
-    struct Meme: Codable {
-     //   let id, name: String?
-        let urlString: String? // Rename url to urlString
-   //     let width, height, boxCount, captions: Int?
-        
-        var imageUrl: URL? {
-            if let urlString = urlString {
-                return URL(string: urlString)
-            }
-            return nil
-        }
+struct DataClass: Codable {
+    let memes: [Meme]
+}
 
+// MARK: - Meme
+struct Meme: Codable {
+    let id: String
+    let name: String
+    let url: String
+    let width: Int
+    let height: Int
+    let boxCount: Int
+    let captions: Int
 
-
-       
+    enum CodingKeys: String, CodingKey {
+        case id, name, url, width, height, boxCount = "box_count", captions
     }
-
-
+}

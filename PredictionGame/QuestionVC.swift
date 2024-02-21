@@ -8,7 +8,23 @@
 import UIKit
 import SnapKit
 
+
+struct QuestionVCViewModel {
+    var dataToSave: String
+    
+    mutating func saveUserName(_ text: String) {
+        dataToSave = text
+        UserDefaults.standard.set(text, forKey: "predictionText")
+    }
+    
+    func loadUserName() -> String? {
+        return UserDefaults.standard.string(forKey: "predictionText")
+    }
+}
+
 class QuestionVC: UIViewController, UITextFieldDelegate {
+    var viewModel: QuestionVCViewModel!
+    
     var completion: ((String) -> ())?
     
     private let guessTextfield: UITextField = {
@@ -31,31 +47,40 @@ class QuestionVC: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        bindViewModel()
+        
+        if let savedName = viewModel.loadUserName() {
+            guessTextfield.text = savedName
+        }
     }
     @objc func goNextVC() {
-       getDataAndBack()
+        getDataAndBack()
     }
-
     
     
+    private func bindViewModel() {
+        viewModel = QuestionVCViewModel(dataToSave: "")
+    }
+ 
     
     private func getDataAndBack() {
-        let vc = MemeVC()
+        let viewModel = MemeControllerViewModel()
+        let vc = MemeVC(viewModel)
         
-        guard let text = guessTextfield.text, text != "" else {
-            
+        
+        guard let text = guessTextfield.text, !text.isEmpty else {
             completion?("no data")
-      
-            
             navigationController?.pushViewController(vc, animated: true)
-            
             return
         }
+        
+        
         
         completion?(text)
         vc.guessLabel.text = text
         navigationController?.pushViewController(vc, animated: true)
     }
+
 }
 
 extension QuestionVC {

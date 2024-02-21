@@ -18,6 +18,7 @@
 		D0BD5BC82B84BFB800DAA4E5 /* MemeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BD5BC72B84BFB800DAA4E5 /* MemeVC.swift */; };
 		D0BD5BCA2B84CD1800DAA4E5 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BD5BC92B84CD1800DAA4E5 /* Meme.swift */; };
 		D0BD5BCC2B84D1D700DAA4E5 /* MemeControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BD5BCB2B84D1D700DAA4E5 /* MemeControllerViewModel.swift */; };
+		D0BD5BD92B86173B00DAA4E5 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BD5BD82B86173B00DAA4E5 /* Test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		D0BD5BC72B84BFB800DAA4E5 /* MemeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeVC.swift; sourceTree = "<group>"; };
 		D0BD5BC92B84CD1800DAA4E5 /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 		D0BD5BCB2B84D1D700DAA4E5 /* MemeControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeControllerViewModel.swift; sourceTree = "<group>"; };
+		D0BD5BD82B86173B00DAA4E5 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				D0BD5BC72B84BFB800DAA4E5 /* MemeVC.swift */,
 				D0BD5B892B836C7B00DAA4E5 /* Main.storyboard */,
 				D0BD5B8C2B836C7E00DAA4E5 /* Assets.xcassets */,
+				D0BD5BD82B86173B00DAA4E5 /* Test.swift */,
 				D0BD5B8E2B836C7E00DAA4E5 /* LaunchScreen.storyboard */,
 				D0BD5B912B836C7E00DAA4E5 /* Info.plist */,
 			);
@@ -82,8 +85,8 @@
 		D0BD5B972B836D1D00DAA4E5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D0BD5BCB2B84D1D700DAA4E5 /* MemeControllerViewModel.swift */,
 				D0BD5BC92B84CD1800DAA4E5 /* Meme.swift */,
+				D0BD5BCB2B84D1D700DAA4E5 /* MemeControllerViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 				D0BD5B882B836C7B00DAA4E5 /* QuestionVC.swift in Sources */,
 				D0BD5BCC2B84D1D700DAA4E5 /* MemeControllerViewModel.swift in Sources */,
 				D0BD5B842B836C7B00DAA4E5 /* AppDelegate.swift in Sources */,
+				D0BD5BD92B86173B00DAA4E5 /* Test.swift in Sources */,
 				D0BD5B862B836C7B00DAA4E5 /* SceneDelegate.swift in Sources */,
 				D0BD5BCA2B84CD1800DAA4E5 /* Meme.swift in Sources */,
 			);
