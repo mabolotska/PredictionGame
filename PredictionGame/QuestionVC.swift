@@ -24,6 +24,9 @@ struct QuestionVCViewModel {
 
 class QuestionVC: UIViewController, UITextFieldDelegate {
     var viewModel: QuestionVCViewModel!
+  
+    
+ 
     
     var completion: ((String) -> ())?
     
@@ -63,18 +66,17 @@ class QuestionVC: UIViewController, UITextFieldDelegate {
     }
  
     
+
     private func getDataAndBack() {
-        let viewModel = MemeControllerViewModel()
-        let vc = MemeVC(viewModel)
-        
-        
         guard let text = guessTextfield.text, !text.isEmpty else {
             completion?("no data")
-            navigationController?.pushViewController(vc, animated: true)
             return
         }
         
+        viewModel.saveUserName(text)
         
+        let memeViewModel = MemeControllerViewModel()
+        let vc = MemeVC(memeViewModel)
         
         completion?(text)
         vc.guessLabel.text = text
