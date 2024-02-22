@@ -13,46 +13,6 @@ import Foundation
         let data: DataClass?
     }
 
-    // MARK: - DataClass
-   
-//
-//    // MARK: - Meme
-//    struct Meme: Codable {
-//        let id, name: String?
-//        let url: String?
-//        let width, height, boxCount, captions: Int?
-//
-//        enum CodingKeys: String, CodingKey {
-//            case id, name, url, width, height
-//            case boxCount = "box_count"
-//            case captions
-//        }
-//    }
-//
-//    typealias Array = [ArrayElement]
-//}
-
-
-//import Foundation
-//struct DataClass: Codable {
-//    let memes: [Meme]
-//}
-//
-//    // MARK: - Meme
-//    struct Meme: Codable {
-//
-//        let url: String
-//        
-////        var imageUrl: URL? {
-////                return URL(string: url)
-////            }
-//        
-//    }
-//
-//
-
-
-import Foundation
 
 struct MemesResponse: Codable {
     let success: Bool

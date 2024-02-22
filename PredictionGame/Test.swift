@@ -3,79 +3,79 @@
 //  PredictionGame
 //
 //  Created by Maryna Bolotska on 21/02/24.
-//
+// imageView1.image = UIImage(systemName: "plus.circle")
 
 import UIKit
 import SnapKit
 
-// MARK: - Model
-struct User {
-    var name: String
-}
-
-// MARK: - ViewModel
-class UserViewModel {
-    var user: User
-    
-    init(user: User) {
-        self.user = user
-    }
-    
-    func saveUserName(_ name: String) {
-        user.name = name
-        UserDefaults.standard.set(name, forKey: "userName")
-    }
-    
-    func loadUserName() -> String? {
-        return UserDefaults.standard.string(forKey: "userName")
-    }
-}
-
-// MARK: - View
 class ViewController: UIViewController {
-    private let textField = UITextField()
-    private let saveButton = UIButton()
     
-    var viewModel: UserViewModel!
-    
+    // Declare UIImageViews
+    let imageView1 = UIImageView()
+    let imageView2 = UIImageView()
+    let imageView3 = UIImageView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .lightGray
-        setupViews()
-        bindViewModel()
+        view.backgroundColor = .white
+        // Set up UIImageViews
+//        imageView1.image = UIImage(systemName: "plus.circle")
+//        imageView2.image = UIImage(systemName: "plus.circle")
+//        imageView3.image = UIImage(systemName: "plus.circle")
         
-        if let savedName = viewModel.loadUserName() {
-            textField.text = savedName
-        }
-    }
-    
-    private func setupViews() {
-        view.addSubview(textField)
-        view.addSubview(saveButton)
+        imageView1.layer.borderWidth = 3
+        imageView2.layer.borderWidth = 3
+        imageView3.layer.borderWidth = 3
+        imageView1.backgroundColor = .green
+        imageView2.backgroundColor = .green
+        imageView3.backgroundColor = .green
         
-        textField.snp.makeConstraints { make in
-            make.centerX.centerY.equalToSuperview()
-            make.width.equalTo(200)
-            make.height.equalTo(50)
-        }
+        view.addSubview(imageView1)
+        view.addSubview(imageView2)
+        view.addSubview(imageView3)
         
-        saveButton.snp.makeConstraints { make in
+        // Set up constraints using SnapKit
+        imageView1.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(textField.snp.bottom).offset(20)
+            make.top.equalToSuperview().offset(100)
+            make.width.height.equalTo(100)
         }
         
-        textField.borderStyle = .roundedRect
-        saveButton.setTitle("Save", for: .normal)
-        saveButton.setTitleColor(.blue, for: .normal)
-        saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+        imageView2.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(imageView1.snp.bottom).offset(20)
+            make.width.height.equalTo(100)
+        }
+        
+        imageView3.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(imageView2.snp.bottom).offset(20)
+            make.width.height.equalTo(100)
+        }
+        
+        // Add tap gesture recognizers to each UIImageView
+        let tapGesture1 = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped(sender:)))
+        let tapGesture2 = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped(sender:)))
+        let tapGesture3 = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped(sender:)))
+        
+        imageView1.isUserInteractionEnabled = true
+        imageView2.isUserInteractionEnabled = true
+        imageView3.isUserInteractionEnabled = true
+        
+        imageView1.addGestureRecognizer(tapGesture1)
+        imageView2.addGestureRecognizer(tapGesture2)
+        imageView3.addGestureRecognizer(tapGesture3)
     }
     
-    private func bindViewModel() {
-        viewModel = UserViewModel(user: User(name: ""))
-    }
-    
-    @objc func saveButtonTapped() {
-        guard let name = textField.text else { return }
-        viewModel.saveUserName(name)
+    @objc func imageViewTapped(sender: UITapGestureRecognizer) {
+        // Reset background colors
+        imageView1.backgroundColor = .black
+        imageView2.backgroundColor = .black
+        imageView3.backgroundColor = .black
+        
+        // Change background color of tapped UIImageView to black
+        if let tappedImageView = sender.view as? UIImageView {
+            tappedImageView.backgroundColor = .clear
+        }
     }
 }
